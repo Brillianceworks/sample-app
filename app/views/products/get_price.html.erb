@@ -1,0 +1,8 @@
+
+<form action="get_price">
+<%=  select("product", "name", Product.all.collect {|p| p.name },
+  {:include_blank => "Please Select"})%>
+ <%=submit_tag 'Show'%>
+</form>
+
+<h4><%= @product.price %></h4>

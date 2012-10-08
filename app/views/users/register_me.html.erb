@@ -1,0 +1,45 @@
+
+
+<%= form_for @user , :url => "submit_registration" do |f| %>
+  <%= f.label :first_name, 'First Name' %>:
+  <%= f.text_field :first_name %><br />
+  <%= f.label :last_name, 'Last Name' %>:
+  <%= f.text_field :last_name %><br />
+
+  <%= f.label :gender, 'Gender' %>:
+  <%= f.radio_button :gender, "M" %>Male
+  <%= f.radio_button :gender, "F" %>Female<br />
+
+  <%= f.label :hobbies, 'Hobbies' %>:
+  <br />
+<%= f.label(:hobbies, "Swimming ") %>
+  <%= f.check_box(:hobbie1, {}, "Swimming" )%>
+
+   <%= f.label(:hobbies, "Cricket ") %>
+  <%= f.check_box(:hobbie2, {}, "Cricket" )%>
+
+  <%= f.label(:hobbies, "Polo") %>
+  <%= f.check_box(:hobbie3, {}, "Polo" )%>
+<br />
+  <%= f.label :email, 'Email' %>:
+  <%= f.text_field :email %><br />
+
+  <%= f.label :email, 'Location' %>:
+  <%= f.text_field :location %><br />
+
+
+  <%= f.label :phone, 'Phone' %>:
+  <%= f.text_field :phone %><br />
+
+ <%= f.label :about_me, 'About Me' %>:<br/>
+ <%= f.text_area :about_me , :cols => 20, :rows => 10 %><br />
+
+
+  <!<%#= f.check_box :user, :hobbie, "ping-pong" %>Ping-pong
+ !>
+
+<%= show_simple_captcha(:label => "human authentication") %>
+
+
+  <%= f.submit %>
+<% end %>

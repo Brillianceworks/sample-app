@@ -1,0 +1,21 @@
+<div id="update_div">
+  <table border="2" class="table">
+    <th>Name</th>
+    <th>Price</th>
+    <th>Stock</th>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= product.price %></td>
+        <td><%= product.items_in_stock %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+<form action="sort_products">
+  <%=  select("product", "sort_criteria", Product::CATEGORIES, {:include_blank => "Please Select"})%>
+  <%=submit_tag 'Show'%>
+</form>
+
+
